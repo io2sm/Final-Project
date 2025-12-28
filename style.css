@@ -318,3 +318,45 @@ nav .nav-links li a:hover {
     color: #18a7b9;
   }
 }
+
+/* Login */
+log-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+
+  log-card {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+  }
+  log-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+  }
+  log-tabs a {
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--primary-color);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+  log-tabs a:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-5px);
+    transition: transform 0.2s;
+  }
+  h2 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--text-main);
+  }
+}
