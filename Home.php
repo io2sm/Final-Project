@@ -41,7 +41,7 @@
           </p>
         </div>
         <div class="card">
-          <img src="Assets/images/gymLady.jpg" alt="lady with a gym bag" />
+          <img src="Assets/images/gymLady.webp" alt="lady with a gym bag" />
           <h3>Flexible Schedule</h3>
           <p>
             Class times are designed to fit your busy lifestyle, with options
