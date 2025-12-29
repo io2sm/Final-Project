@@ -395,3 +395,32 @@ nav .nav-links li a:hover {
     color: #18a7b9;
   }
 }
+/* Footer */
+footer {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 25px;
+  margin-top: 30px;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 10px;
+  i:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s;
+  }
+}
+footer h2 {
+  font-family: var(--heading-font);
+  margin-bottom: 10px;
+}
+footer p {
+  margin-top: 15px;
+  font-size: 16px;
+  span {
+    color: var(--accent-color);
+  }
+}

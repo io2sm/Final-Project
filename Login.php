@@ -19,10 +19,10 @@
     <h2>WELCOME BACK</h2>
 
     <label>Email Address</label>
-    <input type="email" name="email" placeholder="Enter email" />
+    <input type="email" name="email" placeholder="Enter email" required />
 
     <label>Password</label>
-    <input type="password" name="password" placeholder="Enter password" />
+    <input type="password" name="password" placeholder="Enter password" required/>
 
     <button type="submit" name="loginSubmit">LOGIN</button>
     <br>
@@ -34,6 +34,6 @@
 
 </div>
 </form>
-
+<?php include 'footer.php'; ?>
 </body>
 </html>
