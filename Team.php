@@ -1,7 +1,7 @@
 <?php include 'connect.php'; ?>
 
 <?php 
-$select = mysqli_query($con, "SELECT * FROM team");
+$selectTeam = mysqli_query($con, "SELECT * FROM team");
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ $select = mysqli_query($con, "SELECT * FROM team");
   <h2>Our Team</h2>
 
   <div class="cards">
-    <?php while ($row = mysqli_fetch_assoc($select)) { ?>
+    <?php while ($row = mysqli_fetch_assoc($selectTeam)) { ?>
       
       <div class="card instructor">
         <h3><?= $row['name']; ?></h3>
