@@ -1,8 +1,10 @@
+<?php include 'connect.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Login</title>
+  <title>HTU Martial Arts Gym | Login</title>
   <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
       rel="stylesheet"
@@ -29,7 +31,7 @@
   <div class="log-tabs">
       Don't have an account ? <a href="Signup.php">SIGN UP</a>
   </div>
-  <p>Need Help ? <br> Contact us at <span>email@email.com</span></p>
+  <p>Need Help ? <br> Contact us at <span>htugym@gmail.com</span></p>
   </div>
 
 </div>

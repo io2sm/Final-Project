@@ -1,64 +1,41 @@
+<?php include 'connect.php'; ?>
+
+<?php 
+$select = mysqli_query($con, "SELECT * FROM team");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTU Martial Arts Gym</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Navbar -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTU Martial Arts Gym | Our Team</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet"/>
+</head>
+
+<body>
+
 <?php include 'navbar.php'; ?>
-    <!-- Our Team Section -->
-    <section class="ourTeam">
-      <h2>Our Team</h2>
-      <div class="cards">
-        <div class="card">
-          <img src="Assets/images/businessman.png" alt="gym owner" />
-          <h3>Ali Mohammed</h3>
-          <p>Gym owner/head martial arts coach</p>
-          <p class="phoneNumber">+962 79 1234 567</p>
-          <span> alimohammed@email.com </span>
-        </div>
-        <div class="card">
-          <img src="Assets/images/womanInstructor.jpg" alt="woman Instructor" />
-          <h3>Sarah Saleh</h3>
-          <p>Assistant martial arts coach</p>
-          <p class="phoneNumber">+962 79 1234 567</p>
-          <span> sarahsaleh@email.com </span>
-        </div>
 
-        <div class="card">
-          <img src="Assets/images/Trainer.jpg" alt="personal trainer" />
-          <h3>Fares Qasem</h3>
-          <p>Assistant martial arts coach</p>
-          <p class="phoneNumber">+962 79 1234 567</p>
-          <span> faresqasem@email.com </span>
-        </div>
+<section class="ourTeam">
+  <h2>Our Team</h2>
 
-        <div class="card">
-          <img src="Assets/images/businessman.png" alt="gym owner" />
-          <h3>Ali Mohammed</h3>
-          <p>Gym owner/head martial arts coach</p>
-          <p class="phoneNumber">+962 79 1234 567</p>
-          <span> alimohammed@email.com </span>
-        </div>
-        <div class="card">
-          <img src="Assets/images/womanInstructor.jpg" alt="lady Instructor" />
-          <h3>Sarah Saleh</h3>
-          <p>Assistant martial arts coach</p>
-          <p class="phoneNumber">+962 79 1234 567</p>
-          <span> sarahsaleh@email.com </span>
-        </div>
-        <div class="card">
-          <img src="Assets/images/Trainer.jpg" alt="personal trainer" />
-          <h3>Fares Qasem</h3>
-          <p>Assistant martial arts coach</p>
-          <p class="phoneNumber">+962 79 1234 567</p>
-          <span> faresqasem@email.com </span>
-        </div>
+  <div class="cards">
+    <?php while ($row = mysqli_fetch_assoc($select)) { ?>
+      
+      <div class="card instructor">
+        <h3><?= $row['name']; ?></h3>
+        <p class="job"><?= $row['job']; ?></p>
+        <p class="details"><?= $row['details']; ?></p>
       </div>
-    </section>
-        <?php include 'footer.php'; ?>
-  </body>
+
+    <?php } ?>
+  </div>
+</section>
+
+
+
+</body>
+<?php include 'footer.php'; ?>
 </html>

@@ -25,6 +25,9 @@ body {
   font-family: var(--primary-font);
   background-color: var(--background-color);
   color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* NavBar */
@@ -277,45 +280,35 @@ nav .nav-links li a:hover {
   .card {
     background-color: var(--white);
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 30px 25px;
     text-align: center;
     width: 100%;
     max-width: 350px;
-
-    img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      margin: 15px;
-    }
+    max-height: 350px;
 
     h3 {
       font-family: var(--heading-font);
       font-size: 22px;
       color: var(--text-main);
-      padding: 10px;
+      padding: 15px 0px;
+      margin-bottom: 15px;
     }
 
-    p {
-      font-size: 16px;
+    .job {
+      font-size: 17px;
+      color: var(--accent-color);
+      margin-bottom: 25px;
+    }
+    .details {
+      font-size: 14px;
       color: var(--text-secondary);
-      padding: 10px;
+      font-weight: 350;
     }
   }
   .card:hover {
     transform: translateY(-5px);
     transition: transform 0.2s;
-  }
-  .phoneNumber {
-    font-size: 10px;
-    font-weight: 300;
-  }
-  span {
-    display: inline-block;
-    margin-top: 12px;
-    font-weight: 400;
-    color: #18a7b9;
   }
 }
 
@@ -401,7 +394,7 @@ footer {
   color: var(--white);
   text-align: center;
   padding: 25px;
-  margin-top: 30px;
+  margin-top: auto;
 }
 .footer-links {
   display: flex;
