@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTU Martial Arts Gym</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
   </head>
   <body>
@@ -67,20 +71,21 @@
         <div class="card">
           <img src="Assets/images/karateClass.avif" alt="Karate class" />
           <h3>Karate</h3>
-          <a href="#" class="btn">Enroll Now</a>
+          <a href="./classes.php" class="btn">Enroll Now</a>
         </div>
         <div class="card">
           <img src="Assets/images/jiuJitsuClass.webp" alt="Jiu Jitsu class" />
           <h3>Jiu Jitsu</h3>
-          <a href="#" class="btn">Enroll Now</a>
+          <a href="./classes.php" class="btn">Enroll Now</a>
         </div>
         <div class="card">
           <img src="Assets/images/muayThaiClass.jpg" alt="Muay Thai class" />
           <h3>Muay Thai</h3>
-          <a href="#" class="btn">Enroll Now</a>
+          <a href="./classes.php" class="btn">Enroll Now</a>
         </div>
       </div>
     </section>
-    <?php include 'footer.php'; ?>
+    
   </body>
+  <?php include 'footer.php'; ?>
 </html>

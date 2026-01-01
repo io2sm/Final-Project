@@ -17,17 +17,35 @@
 
 <?php include 'navbar.php'; ?>
 
+ <!-- Post to database -->
+  <?php
+    if (isset($_POST['signupSubmit'])) {
+      $name = $_POST['name'];
+      $phone = $_POST['phone'];
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+
+      $sql = "INSERT INTO users (name, phone, email, password) VALUES ('$name', '$phone', '$email', '$password')";
+
+      $result = mysqli_query($con, $sql);
+
+      if ($result) {
+        header('Location: Login.php');
+      } else {
+        echo mysqli_error($con);
+      }
+    }
+      
+  ?>
+
 <form action="Signup.php" method="post">
   <div class="log-container">
     <div class="log-card">
 
       <h2>CREATE ACCOUNT</h2>
 
-      <label>First Name</label>
-      <input type="text" name="first_name" placeholder="Enter first name" required />
-
-      <label>Last Name</label>
-      <input type="text" name="last_name" placeholder="Enter last name" required />
+      <label>Name</label>
+      <input type="text" name="name" placeholder="Enter name" required />
 
       <label>Phone Number</label>
       <input type="tel" name="phone" placeholder="Enter phone number" required />

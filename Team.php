@@ -22,19 +22,17 @@ $selectTeam = mysqli_query($con, "SELECT * FROM team");
   <h2>Our Team</h2>
 
   <div class="cards">
-    <?php while ($row = mysqli_fetch_assoc($selectTeam)) { ?>
+    <?php foreach ($selectTeam as $row) { ?>
       
       <div class="card instructor">
-        <h3><?= $row['name']; ?></h3>
-        <p class="job"><?= $row['job']; ?></p>
-        <p class="details"><?= $row['details']; ?></p>
+        <h3><?php echo $row['name']; ?></h3>
+        <p class="job"><?php echo $row['job']; ?></p>
+        <p class="details"><?php echo $row['details']; ?></p>
       </div>
 
     <?php } ?>
   </div>
 </section>
-
-
 
 </body>
 <?php include 'footer.php'; ?>

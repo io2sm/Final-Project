@@ -21,15 +21,15 @@ $selectMemberships = mysqli_query($con, "SELECT * FROM membership");
 <section class="Courses">
       <h2>Courses</h2>
       <div class="cards">
-<?php while ($rowCourses = mysqli_fetch_assoc($selectCourses)) { ?>
+<?php foreach ($selectCourses as $rowCourses) { ?>
       
         <div class="card">
           <div class = 'card-content'>
-          <h3><?= $rowCourses['name']; ?></h3>
-          <p class = "details"><?= $rowCourses['details']; ?></p>
-          <p class="prices"><?= $rowCourses['price']; ?></p>
+          <h3><?php echo $rowCourses['name']; ?></h3>
+          <p class = "details"><?php echo $rowCourses['details']; ?></p>
+          <p class="prices"><?php echo $rowCourses['price']; ?></p>
           </div>
-          <button class="btn-enroll" name = "<?= $rowCourses['ID']; ?>">Enroll Now</button>
+          <button class="btn-enroll" name = "<?php echo $rowCourses['ID']; ?>">Enroll Now</button>
         </div>
 <?php } ?>
 </div>
@@ -38,16 +38,16 @@ $selectMemberships = mysqli_query($con, "SELECT * FROM membership");
 <section class="Memberships">
       <h2>Memberships</h2>
       <div class="cards">
-<?php while ($rowMemberships = mysqli_fetch_assoc($selectMemberships)) { ?>
+<?php foreach ($selectMemberships as $rowMemberships) { ?>
       
         <div class="card">
 
           <div class = 'card-content'>
-          <h3><?= $rowMemberships['name']; ?></h3>
-          <p class = "details"><?= $rowMemberships['details']; ?></p>
-          <p class="prices"><?= $rowMemberships['price']; ?></p>
+          <h3><?php echo $rowMemberships['name']; ?></h3>
+          <p class = "details"><?php echo $rowMemberships['details']; ?></p>
+          <p class="prices"><?php echo $rowMemberships['price']; ?></p>
           </div>
-          <button class="btn-enroll" name = "<?= $rowMemberships['ID']; ?>">Enroll Now</button>
+          <button class="btn-enroll" name = "<?php echo $rowMemberships['ID']; ?>">Enroll Now</button>
         </div>
 <?php } ?>
 </div>
