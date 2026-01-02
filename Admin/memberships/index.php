@@ -1,0 +1,77 @@
+<?php 
+include '../../connect.php'; 
+include '../adminNav.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="../../style.css" />
+      <style>
+        body { align-items: center; }
+      </style>
+    <title>HTU Gym Memberships Manager</title>
+
+</head>
+<h1>HTU Gym Memberships Manager</h1>
+    <button class="AddBtn"> <a href="membershipAdd.php" class="text-light">Add Membership</a> </button>
+
+<div class="AdminContainer">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Details</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php
+                $sql = "select * from membership";
+                $result = mysqli_query($con, $sql);
+               
+                if ($result) {
+ 
+                    
+                    $allMemberships = mysqli_fetch_all($result, MYSQLI_ASSOC);        
+               
+                    
+                    foreach ($allMemberships as $row) {
+               
+                        $id = $row['ID'];
+                        $name = $row['name'];
+                        $details = $row['details'];
+                        $price = $row['price'];
+          
+                        echo ' <tr>
+                            <th scope="row">' . $id . '</th>
+                            <td>' . $name . '</td>
+                            <td>' . $details . '</td>
+                            <td>' . $price . '</td>
+                            <td class="Btns">
+                            <button class="UpdateBtn"><a href="membershipUpdate.php?id=' . $id . '" class="text-light">Update</a></button>
+                            <button class="DeleteBtn"><a href="membershipDelete.php?ID=' . $id . '" class="text-light">Delete</a></button>
+                            </td>
+                            </tr>';
+ 
+                    }
+ 
+                }
+                ?>
+ 
+            </tbody>
+        </table>
+    </div>
+ 
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -539,3 +539,70 @@ footer p {
     color: var(--accent-color);
   }
 }
+/* Admin Team */
+.AdminContainer {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+}
+.Btns {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.AddBtn {
+  padding: 15px;
+  border-radius: 8px;
+  background-color: var(--success-color);
+  color: var(--white);
+  transition: 0.3s;
+  width: 200px;
+}
+.text-light {
+  text-decoration: none;
+}
+.DeleteBtn {
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #dc3545;
+  color: var(--white);
+  transition: 0.3s;
+}
+.UpdateBtn {
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #0d6efd;
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.adminForm {
+  width: 600px;
+  margin: 60px auto;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  .formRow {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-main);
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+  }
+}
+.adminSubmit {
+  padding: 15px;
+  border-radius: 8px;
+  background-color: var(--success-color);
+  color: var(--white);
+  transition: 0.3s;
+  width: 200px;
+  cursor: pointer;
+}
