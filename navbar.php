@@ -1,6 +1,9 @@
-    <?php
-session_start();
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
       rel="stylesheet"
@@ -24,6 +27,9 @@ session_start();
           <a href="profile.php">
             👤 <?= htmlspecialchars($_SESSION['user_name']); ?>
           </a>
+        </li>
+        <li>
+          <a href="logout.php">Logout</a>
         </li>
     <?php } else { ?>
         <li>

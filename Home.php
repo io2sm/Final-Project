@@ -26,7 +26,7 @@
           to triumph. Sweat, inspire, and conquer with us now! Embrace the magic
           of group exercise and unleash your ultimate self!
         </p>
-        <a href="#" class="btn">View Classes</a>
+        <a href="./classes.php" class="btn">View Classes</a>
       </div>
       <div class="hero-media">
         <img src="Assets/images/guyWorkingOut.webp" alt="A guy working out" />

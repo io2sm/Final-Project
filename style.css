@@ -470,6 +470,43 @@ nav .nav-links li a:hover {
 }
 
 /* Profile Page */
+.profile-header {
+  text-align: center;
+  margin-top: 30px;
+  font-family: var(--heading-font);
+  font-size: 36px;
+  color: var(--text-main);
+}
+.profile-container {
+  margin: 40px auto;
+  background-color: var(--white);
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 1000px;
+}
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .details {
+    display: inline-block;
+  }
+  p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin: 10px;
+  }
+  span {
+    color: var(--success-color);
+  }
+}
 
 /* Footer */
 footer {

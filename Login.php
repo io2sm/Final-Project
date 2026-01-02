@@ -1,8 +1,10 @@
-<?php include 'connect.php'; ?>
+<?php
+include 'connect.php';
+?>
 
   <!-- Database -->
   <?php 
-  session_start();
+   session_start();
     if (isset($_POST['loginSubmit'])) {
       $email = $_POST['email'];
       $password = $_POST['password'];
