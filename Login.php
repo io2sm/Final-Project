@@ -4,8 +4,9 @@ include 'connect.php';
 
   <!-- Database -->
   <?php 
-   session_start();
+   
     if (isset($_POST['loginSubmit'])) {
+      session_start();
       $email = $_POST['email'];
       $password = $_POST['password'];
 
@@ -16,13 +17,20 @@ include 'connect.php';
         $user = mysqli_fetch_assoc($result);
         $_SESSION['user_id'] = $user['ID'];
         $_SESSION['user_name'] = $user['name'];
-        header('Location: Home.php');
-        exit();
-      } else 
+        $_SESSION['isAdmin'] = $user['isAdmin'];
+
+        if ($user['isAdmin'] == 1) {
+          header('Location: Admin/courses/index.php');
+          exit();
+        } else {
+          header('Location: Home.php');
+          exit();
+        }
+      } else {
         header("Location: Login.php?error=1");
         exit();
       }
-    
+    }
   ?>
     <!DOCTYPE html>
     <html lang="en">

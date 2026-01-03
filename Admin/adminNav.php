@@ -4,7 +4,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../../style.css" />
     
     <nav>
       <div class="logo">
@@ -17,6 +16,7 @@
           <li><a href="../courses/index.php">Edit Courses</a></li>
           <li><a href="../memberships/index.php">Edit Memberships</a></li>
           <li><a href="#">Edit Timetable</a></li>
+          <li><a href="../../Home.php">User Interface</a></li>
         </ul>
       </div>
     </nav>
