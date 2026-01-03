@@ -494,6 +494,7 @@ nav .nav-links li a:hover {
     height: 150px;
     border-radius: 50%;
     display: inline-block;
+    border: 1.5px solid black;
   }
   .details {
     display: inline-block;
@@ -505,6 +506,66 @@ nav .nav-links li a:hover {
   }
   span {
     color: var(--success-color);
+  }
+}
+.course-membership {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  h2 {
+    font-family: var(--heading-font);
+    font-size: 28px;
+    color: var(--text-main);
+    margin: 20px 0px;
+  }
+  .enrolled-memberships,
+  .enrolled-courses {
+    background-color: rgba(249, 249, 249, 0.786);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px 50px 50px 50px;
+    margin: 10px;
+    border-radius: 12px;
+  }
+  .enroll-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    h3 {
+      font-family: var(--heading-font);
+      font-size: 22px;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+    .prices {
+      font-size: 14px;
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+    .cancel-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background-color: #dc3545;
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    a {
+      text-decoration: none;
+      color: var(--white);
+    }
+    .cancel-btn:hover {
+      background-color: #b02a37;
+      transform: translateY(-3px);
+    }
   }
 }
 

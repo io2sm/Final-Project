@@ -29,16 +29,18 @@ $userInfo = mysqli_query($con, "SELECT * FROM users WHERE ID = ".$_SESSION['user
         <hr>
         <br>
         <?php } ?>
+        <section class="course-membership">
         <div class="enrolled-courses">
             <h2 style = "text-align: center;">Your Enrolled Courses</h2><br>
             <?php
             $userCourses = mysqli_query($con, "SELECT * FROM usercourses WHERE userID = ".$_SESSION['user_id']);
             if (mysqli_num_rows($userCourses) > 0) {
                 foreach ($userCourses as $course) {
-                    echo "<div class='enrolled-course-card'>
+                    echo "<div class='enroll-card'>
                             <h3>" . $course['productName'] . "</h3>
                             <p>" . $course['productDetails'] . "</p>
                             <p class='prices'>" . $course['productPrice'] . "</p>
+                            <button class='cancel-btn'><a href='cancelCourse.php?id=" . $course['ID'] . "'>Cancel Course</a></button>
                           </div>";
                 }
             } else {
@@ -52,10 +54,11 @@ $userInfo = mysqli_query($con, "SELECT * FROM users WHERE ID = ".$_SESSION['user
             $userMemberships = mysqli_query($con, "SELECT * FROM usermemberships WHERE userID = ".$_SESSION['user_id']);
             if (mysqli_num_rows($userMemberships) > 0) {
                 foreach ($userMemberships as $membership) {
-                    echo "<div class='enrolled-membership-card'>
+                    echo "<div class='enroll-card'>
                             <h3>" . $membership['membershipName'] . "</h3>
                             <p>" . $membership['membershipDetails'] . "</p>
                             <p class='prices'>" . $membership['membershipPrice'] . "</p>
+                            <button class='cancel-btn'><a href='cancelMembership.php?id=" . $membership['ID'] . "'>Cancel Membership</a></button>
                           </div>";
                 }
             } else {
@@ -63,6 +66,7 @@ $userInfo = mysqli_query($con, "SELECT * FROM users WHERE ID = ".$_SESSION['user
             }
             ?>
     </div>
+    </section>
         </div> 
 
 </body>
