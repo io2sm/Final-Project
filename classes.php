@@ -24,23 +24,22 @@ if (isset($_POST['courseEnroll'])) {
   }
 }
 if (isset($_POST['membershipEnroll'])) {
-  $userMemberships = mysqli_query($con, "SELECT * FROM usermemberships WHERE userID = ".$_SESSION['user_id']);
-            if (mysqli_num_rows($userMemberships) > 0) {
-                        echo "<script>alert('You are already enrolled in a membership.');</script>";
-                    }
-  else if (isset($_SESSION['user_id'])) {
+    if (isset($_SESSION['user_id'])) {
     $membershipId = $_POST['membershipId'];
     $membershipName = $_POST['membershipName'];
     $membershipDetails = $_POST['membershipDetails'];
     $membershipPrice = $_POST['membershipPrice'];
     $userID = $_SESSION['user_id'];
-    
-    $userMembershipsSql = "INSERT INTO `usermemberships`(`membershipName`, `membershipDetails`, `membershipPrice`, `userID`) VALUES ( '$membershipName', '$membershipDetails', '$membershipPrice', '$userID')";
-    mysqli_query($con, $userMembershipsSql); 
-  } else {
+    $userMemberships = mysqli_query($con, "SELECT * FROM usermemberships WHERE userID = ".$_SESSION['user_id']);
+
+                  if (mysqli_num_rows($userMemberships) > 0) {
+                  echo "<script>alert('You are already enrolled in a membership.');</script>";
+                  } else { $userMembershipsSql = "INSERT INTO `usermemberships`(`membershipName`, `membershipDetails`, `membershipPrice`, `userID`) VALUES ( '$membershipName', '$membershipDetails', '$membershipPrice', '$userID')";
+                  mysqli_query($con, $userMembershipsSql); 
+                  }}
+  else {
     echo "<script>alert('Please log in to enroll in a membership.');</script>";
-}
-}
+}}
 ?>
 
 

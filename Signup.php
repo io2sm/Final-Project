@@ -25,14 +25,19 @@
       $email = $_POST['email'];
       $password = $_POST['password'];
 
-      $sql = "INSERT INTO users (name, phone, email, password) VALUES ('$name', '$phone', '$email', '$password')";
-
-      $result = mysqli_query($con, $sql);
-
-      if ($result) {
-        header('Location: Login.php');
+      $checkEmail = mysqli_query($con, "SELECT * FROM users WHERE email = '$email'");
+      if (mysqli_num_rows($checkEmail) > 0) {
+        echo "<script>alert('Email already exists. Please use a different email.');</script>";
       } else {
-        echo mysqli_error($con);
+        $sql = "INSERT INTO users (name, phone, email, password) VALUES ('$name', '$phone', '$email', '$password')";
+
+        $result = mysqli_query($con, $sql);
+
+        if ($result) {
+          header('Location: Login.php');
+        } else {
+          echo mysqli_error($con);
+        }
       }
     }
       
