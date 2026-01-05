@@ -31,6 +31,12 @@ body {
   flex-direction: column;
 }
 
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 /* NavBar */
 nav {
   display: flex;
@@ -315,12 +321,34 @@ nav .nav-links li a:hover {
   }
 }
 
-/* Login */
+@media (max-width: 1024px) {
+  .ourTeam {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .ourTeam {
+    .cards {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .card {
+      max-width: none;
+      max-height: none;
+    }
+  }
+}
+
+/* Login / Signup */
 .log-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 80vh;
+  margin: 10px;
 }
 .log-card {
   background-color: var(--white);

@@ -18,22 +18,25 @@ $selectTeam = mysqli_query($con, "SELECT * FROM team");
 
 <?php include 'navbar.php'; ?>
 
-<section class="ourTeam">
-  <h2>Our Team</h2>
+<main>
+  <section class="ourTeam">
+    <h2>Our Team</h2>
 
-  <div class="cards">
-    <?php foreach ($selectTeam as $row) { ?>
-      
-      <div class="card instructor">
-        <h3><?php echo $row['name']; ?></h3>
-        <p class="job"><?php echo $row['job']; ?></p>
-        <p class="details"><?php echo $row['details']; ?></p>
-      </div>
+    <div class="cards">
+      <?php foreach ($selectTeam as $row) { ?>
+        
+        <div class="card instructor">
+          <h3><?php echo $row['name']; ?></h3>
+          <p class="job"><?php echo $row['job']; ?></p>
+          <p class="details"><?php echo $row['details']; ?></p>
+        </div>
 
-    <?php } ?>
-  </div>
-</section>
+      <?php } ?>
+    </div>
+  </section>
+</main>
 
-</body>
 <?php include 'footer.php'; ?>
+</body>
+
 </html>

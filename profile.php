@@ -68,7 +68,7 @@ $userInfo = mysqli_query($con, "SELECT * FROM users WHERE ID = ".$_SESSION['user
     </div>
     </section>
         </div> 
-
+<?php include 'footer.php'; ?>
 </body>
-    <?php include 'footer.php'; ?>
+    
 </html>

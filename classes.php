@@ -109,7 +109,7 @@ $selectMemberships = mysqli_query($con, "SELECT * FROM membership");
 <?php } ?>
 </div>
 </section>
-
-</body>
 <?php include 'footer.php'; ?>
+</body>
+
 </html>
