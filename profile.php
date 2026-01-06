@@ -1,5 +1,8 @@
 <?php include 'connect.php'; 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 $userInfo = mysqli_query($con, "SELECT * FROM users WHERE ID = ".$_SESSION['user_id']);
 ?>
 <!DOCTYPE html>

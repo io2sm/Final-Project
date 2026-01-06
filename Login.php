@@ -6,7 +6,9 @@ include 'connect.php';
   <?php 
    
     if (isset($_POST['loginSubmit'])) {
-      session_start();
+      if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
       $email = $_POST['email'];
       $password = $_POST['password'];
 
