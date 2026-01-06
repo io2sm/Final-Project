@@ -7,4 +7,3 @@ if (found) {
   alert("Incorrect email or password. Please try again");
 }
 
-

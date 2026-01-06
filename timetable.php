@@ -1,9 +1,20 @@
 <?php 
 include 'connect.php';
 
-$sql = "SELECT * FROM timetable";
-$result = mysqli_query($con, $sql);
-$timetable = mysqli_fetch_all($result, MYSQLI_ASSOC);
+$sun = mysqli_query($con, "SELECT * FROM timetable WHERE day='Sunday' ORDER BY startTime");
+$sunday = mysqli_fetch_all($sun, MYSQLI_ASSOC);
+$mon = mysqli_query($con, "SELECT * FROM timetable WHERE day='Monday' ORDER BY startTime");
+$monday = mysqli_fetch_all($mon, MYSQLI_ASSOC);
+$tue = mysqli_query($con, "SELECT * FROM timetable WHERE day='Tuesday' ORDER BY startTime");
+$tuesday = mysqli_fetch_all($tue, MYSQLI_ASSOC);
+$wed = mysqli_query($con, "SELECT * FROM timetable WHERE day='Wednesday' ORDER BY startTime");
+$wednesday = mysqli_fetch_all($wed, MYSQLI_ASSOC);
+$thu = mysqli_query($con, "SELECT * FROM timetable WHERE day='Thursday' ORDER BY startTime");
+$thursday = mysqli_fetch_all($thu, MYSQLI_ASSOC);
+$fri = mysqli_query($con, "SELECT * FROM timetable WHERE day='Friday' ORDER BY startTime");
+$friday = mysqli_fetch_all($fri, MYSQLI_ASSOC);
+$sat = mysqli_query($con, "SELECT * FROM timetable WHERE day='Saturday' ORDER BY startTime");
+$saturday = mysqli_fetch_all($sat, MYSQLI_ASSOC);
 
 ?>
 <!DOCTYPE html>
@@ -23,25 +34,124 @@ $timetable = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <table>
         <thead>
             <tr>
-                <th>Day</th> 
-                <th>Name</th>
-                <th>Details</th>
-                <th>Start Time</th>
-                <th>End Time</th>
-                <th>Instructor</th>
+                <th id = "dayTh">Day</th>
+                <th id = "classTh">Classes</th> 
             </tr>
         </thead>
+    </table>
+    <table>
+        
         <tbody>
-            <?php foreach ($timetable as $row) { ?>
-            <tr>
-                <td><?php echo $row['day']; ?></td>
-                <td><?php echo $row['name']; ?></td>
-                <td><?php echo $row['details']; ?></td>
-                <td><?php echo $row['startTime']; ?></td>
-                <td><?php echo $row['endTime']; ?></td>
-                <td><?php echo $row['instructor']; ?></td>
-            </tr>
+            <!-- Sunday -->
+             <tr> <td> Sunday </td>
+            <?php foreach ($sunday as $row) { ?>
+                <td>
+            <div class="card">
+          <div class = 'card-content'>
+          <h3><?php echo $row['name']; ?></h3>
+          <p class = "details"><?php echo $row['details']; ?></p>
+          <p class="time"><?php echo date("H:i", strtotime($row['startTime'])); ?> - <?php echo date("H:i", strtotime($row['endTime'])); ?></p>
+            <p class="instructor">By : <?php echo $row['instructor']; ?></p>
+          </div>
+            </div>
+            </td>
             <?php } ?>
+            </tr>
+            <!-- Monday -->
+           <tr> <td> Monday </td>
+            <?php foreach ($monday as $row) { ?>
+            <td>
+            <div class="card">
+          <div class = 'card-content'>
+          <h3><?php echo $row['name']; ?></h3>
+          <p class = "details"><?php echo $row['details']; ?></p>
+          <p class="time"><?php echo date("H:i", strtotime($row['startTime'])); ?> - <?php echo date("H:i", strtotime($row['endTime'])); ?></p>
+            <p class="instructor">By : <?php echo $row['instructor']; ?></p>
+          </div>
+            </div>
+            </td>
+            <?php } ?>
+            </tr>
+            
+            <!-- Tuesday -->
+            <tr> <td> Tuesday </td>
+            <?php foreach ($tuesday as $row) { ?>
+                <td>
+            <div class="card">
+          <div class = 'card-content'>
+          <h3><?php echo $row['name']; ?></h3>
+          <p class = "details"><?php echo $row['details']; ?></p>
+          <p class="time"><?php echo date("H:i", strtotime($row['startTime'])); ?> - <?php echo date("H:i", strtotime($row['endTime'])); ?></p>
+            <p class="instructor">By : <?php echo $row['instructor']; ?></p>
+          </div>
+            </div>
+            </td>
+            <?php } ?>
+            </tr>
+            
+            <!-- Wednesday -->
+            <tr> <td> Wednesday </td>
+            <?php foreach ($wednesday as $row) { ?>
+                <td>
+            <div class="card">
+          <div class = 'card-content'>
+          <h3><?php echo $row['name']; ?></h3>
+          <p class = "details"><?php echo $row['details']; ?></p>
+          <p class="time"><?php echo date("H:i", strtotime($row['startTime'])); ?> - <?php echo date("H:i", strtotime($row['endTime'])); ?></p>
+            <p class="instructor">By : <?php echo $row['instructor']; ?></p>
+          </div>
+            </div>
+            </td>
+            <?php } ?>
+            </tr>
+            
+            <!-- Thursday -->
+                         <tr> <td> Thursday </td>
+            <?php foreach ($thursday as $row) { ?>
+                <td>
+            <div class="card">
+          <div class = 'card-content'>
+          <h3><?php echo $row['name']; ?></h3>
+          <p class = "details"><?php echo $row['details']; ?></p>
+          <p class="time"><?php echo date("H:i", strtotime($row['startTime'])); ?> - <?php echo date("H:i", strtotime($row['endTime'])); ?></p>
+            <p class="instructor">By : <?php echo $row['instructor']; ?></p>
+          </div>
+            </div>
+            </td>
+            <?php } ?>
+            </tr>
+            
+            <!-- Friday -->
+                        <tr> <td> Friday </td>
+            <?php foreach ($friday as $row) { ?>
+                <td>
+            <div class="card">
+          <div class = 'card-content'>
+          <h3><?php echo $row['name']; ?></h3>
+          <p class = "details"><?php echo $row['details']; ?></p>
+          <p class="time"><?php echo date("H:i", strtotime($row['startTime'])); ?> - <?php echo date("H:i", strtotime($row['endTime'])); ?></p>
+            <p class="instructor">By : <?php echo $row['instructor']; ?></p>
+          </div>
+            </div>
+            </td>
+            <?php } ?>
+            </tr>
+            
+            <!-- Saturday -->
+            <tr> <td> Saturday </td>
+            <?php foreach ($saturday as $row) { ?>
+                <td>
+            <div class="card">
+          <div class = 'card-content'>
+          <h3><?php echo $row['name']; ?></h3>
+          <p class = "details"><?php echo $row['details']; ?></p>
+          <p class="time"><?php echo date("H:i", strtotime($row['startTime'])); ?> - <?php echo date("H:i", strtotime($row['endTime'])); ?></p>
+            <p class="instructor">By : <?php echo $row['instructor']; ?></p>
+          </div>
+            </div>
+            </td>
+            <?php } ?>
+            </tr>
         </tbody>
     </table>
             </main>

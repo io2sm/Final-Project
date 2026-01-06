@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
 
     $sql = "insert into membership (name,details,price) values ('$name','$details','$price')";
     $result = mysqli_query($con, $sql);
-    if ($con) {
+    if ($result) {
         header('Location: index.php');
         exit();
     } else {

@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
 
     $sql = "insert into courses (name,details,price) values ('$name','$details','$price')";
     $result = mysqli_query($con, $sql);
-    if ($con) {
+    if ($result) {
         header('Location: index.php');
         exit();
     } else {

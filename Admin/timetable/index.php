@@ -1,6 +1,6 @@
 <?php 
 include '../../connect.php'; 
-include '../adminNav.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -14,51 +14,61 @@ include '../adminNav.php';
       <style>
         body { align-items: center; }
       </style>
-    <title>HTU Gym Courses Manager</title>
+    <title>HTU Gym Timetable Manager</title>
 
 </head>
 <body>
-    <h1>HTU Gym Courses Manager</h1>
-    <button class="AddBtn"> <a href="courseAdd.php" class="text-light">Add Course</a> </button>
+    <?php include '../adminNav.php'; ?>
+    <h1>HTU Gym Timetable Manager</h1>
+    <button class="AddBtn"> <a href="timetableAdd.php" class="text-light">Add Class</a> </button>
 
 <div class="AdminContainer">
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
+                    <th scope="col">Day</th>
                     <th scope="col">Name</th>
                     <th scope="col">Details</th>
-                    <th scope="col">Price</th>
+                    <th scope="col">Start Time</th>
+                    <th scope="col">End Time</th>
+                    <th scope="col">Instructor</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
 
                 <?php
-                $sql = "select * from courses";
+                $sql = "select * from timetable ORDER BY FIELD(day, 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'), startTime";
                 $result = mysqli_query($con, $sql);
                
                 if ($result) {
  
                     
-                    $allCourses = mysqli_fetch_all($result, MYSQLI_ASSOC);        
+                    $allClasses = mysqli_fetch_all($result, MYSQLI_ASSOC);        
                
                     
-                    foreach ($allCourses as $row) {
+                    foreach ($allClasses as $row) {
                
                         $id = $row['ID'];
+                        $day = $row['day'];
                         $name = $row['name'];
                         $details = $row['details'];
-                        $price = $row['price'];
+                        $startTime = $row['startTime'];
+                        $endTime = $row['endTime'];
+                        $instructor = $row['instructor'];
           
                         echo ' <tr>
                             <th scope="row">' . $id . '</th>
+                            <td>' . $day . '</td>
                             <td>' . $name . '</td>
                             <td>' . $details . '</td>
-                            <td>' . $price . '</td>
+                            <td>' . $startTime . '</td>
+                            <td>' . $endTime . '</td>
+                            <td>' . $instructor . '</td>
                             <td class="Btns">
-                            <button class="UpdateBtn"><a href="courseUpdate.php?id=' . $id . '" class="text-light">Update</a></button>
-                            <button class="DeleteBtn"><a href="courseDelete.php?ID=' . $id . '" class="text-light">Delete</a></button>
+                            <button class="UpdateBtn"><a href="timetableUpdate.php?id=' . $id . '" class="text-light">Update</a></button>
+                            <button class="DeleteBtn"><a href="timetableDelete.php?ID=' . $id . '" class="text-light">Delete</a></button>
                             </td>
                             </tr>';
  
@@ -70,6 +80,5 @@ include '../adminNav.php';
             </tbody>
         </table>
     </div>
-    
 </body>
 </html>
