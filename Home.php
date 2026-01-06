@@ -5,11 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTU Martial Arts Gym</title>
-    <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
 
   </head>
   <body>
@@ -18,14 +18,16 @@
     <!-- Hero -->
     <div class="hero">
       <div class="hero-content">
-        <h1>Feel The difference</h1>
+         <button id="changeTitleBtn"> <h1 id="hero-title">Feel The difference</h1> </button>
+        
         <p>
           Experience heart-pumping cardio, strength-building challenges, and
           inspiring moves, all in one energetic fusion. Elevate your fitness
           journey with the power of unity, as the collective rhythm propels you
           to triumph. Sweat, inspire, and conquer with us now! Embrace the magic
           of group exercise and unleash your ultimate self!
-        </p>
+        </p> 
+        <p id = "hint">Tip : Click the title to change it!</p>
         <a href="./classes.php" class="btn">View Classes</a>
       </div>
       <div class="hero-media">
@@ -86,6 +88,7 @@
       </div>
     </section>
      <?php include 'footer.php'; ?>
+     <script src="script.js"></script>
   </body>
  
 </html>
