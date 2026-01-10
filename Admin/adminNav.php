@@ -16,7 +16,7 @@
           <li><a href="../courses/index.php">Edit Courses</a></li>
           <li><a href="../memberships/index.php">Edit Memberships</a></li>
           <li><a href="../timetable/index.php">Edit Timetable</a></li>
-          <li><a href="../../Home.php">User Interface</a></li>
+          <li><a href="../../index.php">User Interface</a></li>
         </ul>
       </div>
     </nav>

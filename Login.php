@@ -25,7 +25,7 @@ include 'connect.php';
           header('Location: Admin/courses/index.php');
           exit();
         } else {
-          header('Location: Home.php');
+          header('Location: index.php');
           exit();
         }
       } else {

@@ -18,7 +18,7 @@ if (session_status() === PHP_SESSION_NONE) {
       </div>
       <div>
         <ul class="nav-links">
-          <li><a href="Home.php">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="classes.php">Classes</a></li>
           <li><a href="timetable.php">Timetable</a></li>
           <li><a href="Team.php">Team</a></li>
