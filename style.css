@@ -44,9 +44,11 @@ nav {
   align-items: center;
   height: 80px;
   background-color: var(--secondary-color);
-  flex-wrap: wrap;
   gap: 15px;
   padding: 10px 20px;
+}
+.regular-nav {
+  flex-wrap: wrap;
 }
 
 .nav-links {
@@ -54,8 +56,10 @@ nav {
   align-items: center;
   list-style: none;
   gap: 15px;
-  flex-wrap: wrap;
   justify-content: center;
+}
+.regular-nav .nav-links {
+  flex-wrap: wrap;
 }
 
 nav .nav-links li a {
@@ -94,13 +98,13 @@ nav .nav-links li a:hover {
 }
 
 @media (max-width: 1024px) {
-  nav {
+  .regular-nav {
     justify-content: center;
     height: auto;
     min-height: 80px;
   }
 
-  .nav-links {
+  .regular-nav .nav-links {
     gap: 10px;
   }
 
@@ -109,43 +113,43 @@ nav .nav-links li a:hover {
     font-size: 16px;
   }
 
-  .logo h2 {
+  .regular-nav .logo h2 {
     font-size: 18px;
   }
 }
 
 @media (max-width: 768px) {
-  nav {
+  .regular-nav {
     flex-direction: column;
     height: auto;
     padding: 15px 10px;
     gap: 10px;
   }
 
-  .logo {
+  .regular-nav .logo {
     gap: 8px;
   }
 
-  .logo img {
+  .regular-nav .logo img {
     width: 50px;
     height: 50px;
   }
 
-  .logo h2 {
+  .regular-nav .logo h2 {
     font-size: 16px;
   }
 
-  .nav-links {
+  .regular-nav .nav-links {
     flex-direction: column;
     gap: 8px;
     width: 100%;
   }
 
-  nav .nav-links li {
+  .regular-nav .nav-links li {
     width: 100%;
   }
 
-  nav .nav-links li a {
+  .regular-nav .nav-links li a {
     padding: 10px 12px;
     font-size: 14px;
     width: 100%;
@@ -422,7 +426,7 @@ nav .nav-links li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  min-height: 80vh;
   margin: 10px;
 }
 .log-card {
